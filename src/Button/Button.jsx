@@ -1,10 +1,11 @@
-import React from 'react';
-import styles from './Button.module.css';
+// File: Button.jsx
+import React from "react";
+import styles from "./Button.module.css";
 
-const Button = ({ text, onClick }) => {
+const Button = ({ children, onClick }) => {
   return (
     <button className={styles.button} onClick={onClick}>
-      {text}
+      {children}
     </button>
   );
 };
