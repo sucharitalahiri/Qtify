@@ -1,8 +1,9 @@
 import React from "react";
 import styles from "./Search.module.css";
+import searchIcon from "../../assets/search-icon.png";
 import { useAutocomplete } from "@mui/base";
 import { styled } from "@mui/system";
-// import { truncate } from "../../helpers/helpers";
+import { truncate } from "../../helpers/helpers";
 import { useNavigate } from "react-router-dom";
 
 const Listbox = styled("ul")({
@@ -13,9 +14,13 @@ const Listbox = styled("ul")({
   borderRadius: "0px 0px 10px 10px",
   border: "1px solid var(--color-primary)",
   top: 60,
+  height: "max-content",
   maxHeight: "500px",
   zIndex: 10,
   overflowY: "scroll",
+  left: 0,
+  bottom: 0,
+  right: 0,
   listStyle: "none",
   backgroundColor: "var(--color-black)",
   overflow: "auto",
@@ -70,7 +75,7 @@ function Search({ searchData, placeholder }) {
         </div>
         <div>
           <button className={styles.searchButton} type="submit" aria-label="Search">
-            🔍
+          <img src={searchIcon} alt="Search" />
           </button>
         </div>
       </form>
@@ -91,9 +96,9 @@ function Search({ searchData, placeholder }) {
               >
                 <div>
                   <p className={styles.albumTitle}>{option.title}</p>
-                  {/* <p className={styles.albumArtists}>
+                  <p className={styles.albumArtists}>
                     {truncate(artists.join(", "), 40)}
-                  </p> */}
+                  </p>
                 </div>
               </li>
             );
