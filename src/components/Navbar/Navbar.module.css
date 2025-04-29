@@ -7,3 +7,8 @@
   align-items:center;
   justify-content:space-between;
 }
+.logo-link{
+  display: flex;
+  align-items: center; /* vertically center */
+  margin-left: 1rem;
+}
